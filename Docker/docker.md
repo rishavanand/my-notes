@@ -109,9 +109,41 @@ Read more:
 
 #### Published ports
 
-By default no ports is exposed to the outside world by Docker. Internally containers can access the ports to another containers but this is now allowed for objects residing outside the Docker instance. For this ports can be published to the host there by allowing communications with the outside world. -p // --publish is used to create a firewall rule which maps a container port to a port on the Docker host. 
+By default no ports is exposed to the outside world by Docker. Internally containers can access the ports to another containers but this is now allowed for objects residing outside the Docker instance. For this ports can be published to the host there by allowing communications with the outside world. -p or --publish is used to create a firewall rule which maps a container port to a port on the Docker host. 
 
 ## Docker commands
+
+### Image commands
+
+- List all images
+  - `docker image ls`
+  - `docker images`
+- Remove image
+  - `docker rmi <IMAGE-ID>`
+  - `docker rmi <USERNAME>/<IMAGE-NAME>:<:TAG>`
+  - Example: `docker rmi AS65C78HU9SH`
+- Build image from Dockerfile
+  - `docker build -t <USERNAME>/<IMAGE-NAME>:<:TAG> <DOCKERFILE-PATH>` 
+  - Example: `docker build -t rishavanand:latest .`
+- Tag an image
+  - `docker tag <USERNAME>/<IMAGE-NAME> <MY-USERNAME>:<TAG>` or `docker tag <IMAGE-ID> <MY-IMAGE>:<TAG>`
+  - Example: `docker tag AS65C78HU9SH rishavanand:latest`
+- Export image
+  - `docker save -o <FILENAME>.tar`
+- Load image
+  - `docker load -i <FILENAME>.tar`
+- Push image to registry
+  - `docker push <REGISTRY-SERVER-ADDRESS>/<USERNAME>/<IMAGE-NAMGE>:<TAG>`
+  - Example: `docker push registry-host:5000/rishavanand/website:v2`
+  - Note: If register server address is not specified, Docker hub is taken as default.
+
+### Container commands
+
+### Network commands
+
+### Registry commands
+
+### Volume commands
 
 ## Dockerfile
 - Every command creates a new layer and while updating image only the modified layer needs to be pulled/pushed thereby reducing transfer size. 
