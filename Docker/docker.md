@@ -97,7 +97,19 @@ Read more:
 
 ### Networks
 
-### Port mapping
+Networks in Docker is used to allow communication between containers and/or hosts. By default Docker has 3 networks of 3 types:
+
+1. Bridge: Containers attach to this network by default. Used when multiple containers needs to communicate on the same host. An IP is allocated to each container. 
+2. Host:  Is a special network which skips the virtual networking of docker and attach the container directly to host interface. It's really not recommended but, in certain situations, can improve the performance of high throughput networking and in other, you will loose out of few benefits of containerization.
+3. None: Used to disable all networking.
+
+Read more:
+- https://stackoverflow.com/questions/41083328/what-is-the-use-of-host-and-none-network-in-docker
+- https://docs.docker.com/network/
+
+#### Published ports
+
+By default no ports is exposed to the outside world by Docker. Internally containers can access the ports to another containers but this is now allowed for objects residing outside the Docker instance. For this ports can be published to the host there by allowing communications with the outside world. -p // --publish is used to create a firewall rule which maps a container port to a port on the Docker host. 
 
 ## Docker commands
 
