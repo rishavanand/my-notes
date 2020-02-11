@@ -170,7 +170,17 @@ By default no ports is exposed to the outside world by Docker. Internally contai
   - `docker exec -it <IMAGE-NAME|IMAGE-ID> bash`
 
 ### Network commands
-
+  - New bridge network
+    - `docker network create <YOUR-NETWORK-NAME>`
+  - Connect container to a network
+    - `docker network connect <YOUR-NETWORK-NAME> <YOUR-CONTAINER-NAME|YOUR-CONTAINER-ID>`
+  - Inspect network
+    - `docker network inspect <YOUR-NETWORK-NAME>`
+  - List all networks
+    - `docker network ls`
+  - Remove a network
+    - `docker network rm <YOUR-NETWORK-NAME>`
+    - 
 ### Registry commands
 
 ### Volume commands
