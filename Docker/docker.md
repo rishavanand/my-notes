@@ -139,6 +139,36 @@ By default no ports is exposed to the outside world by Docker. Internally contai
 
 ### Container commands
 
+- List containers
+  - `docker ps`
+    - all running containers
+  - `docker ps -a `
+    - all containers
+- Run a container
+    - interactive mode
+      - `docker run -it <IMAGE-NAME|IMAGE-ID> /bin/bash`
+    - detached mode
+      - `docker run --name my-webapp -d <IMAGE-NAME|IMAGE-ID>`
+    - with container name
+      - `docker run --name my-webapp -d <IMAGE-NAME|IMAGE-ID>`
+    - with port publishing
+      - `docker run -d -p 8080:8080 <IMAGE-NAME|IMAGE-ID>`
+    - with particular network attachment
+      - `docker run -d --net <NETWORK-NAME> <IMAGE-NAME|IMAGE-ID>`
+    - with mounted folder
+      - `docker run -v myfolder:/root/app <IMAGE-NAME|IMAGE-ID>`
+- Logs
+  - `docker logs -f <CONTAINER-ID|CONTAINER-NAME>`
+- Stop a container
+  - `docker stop <CONTAINER-ID|CONTAINER-NAME>`
+- Remove container
+  - Normal remove
+    - `docker rm <CONTAINER-ID|CONTAINER-NAME>`
+  - Force remove
+    - `docker rm -f <CONTAINER-ID|CONTAINER-NAME>`
+- Execute process inside a container
+  - `docker exec -it <IMAGE-NAME|IMAGE-ID> bash`
+
 ### Network commands
 
 ### Registry commands
