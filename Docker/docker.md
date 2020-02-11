@@ -157,7 +157,7 @@ By default no ports is exposed to the outside world by Docker. Internally contai
       - `docker run -d --net <NETWORK-NAME> <IMAGE-NAME|IMAGE-ID>`
     - with mounted folder
       - `docker run -v myfolder:/root/app <IMAGE-NAME|IMAGE-ID>`
-- Logs
+- Container logs
   - `docker logs -f <CONTAINER-ID|CONTAINER-NAME>`
 - Stop a container
   - `docker stop <CONTAINER-ID|CONTAINER-NAME>`
@@ -190,6 +190,16 @@ By default no ports is exposed to the outside world by Docker. Internally contai
   - `docker logout <SERVER-ADDRESS>` (if no server then docker hub)
 
 ### Volume commands
+- Create a volume
+  - `docker volume create <YOUR-VOLUME-NAME>`
+- Remove a volume
+  - `docker volume rm <YOUR-VOLUME-NAME>`
+- Inspect a volume
+  - `docker volume inspect <YOUR-VOLUME-NAME>`
+- List all volumes
+  - `docker volume ls`
+- Remove all unused volumes
+  - `docker volume prune`
 
 ## Dockerfile
 - Every command creates a new layer and while updating image only the modified layer needs to be pulled/pushed thereby reducing transfer size. 
