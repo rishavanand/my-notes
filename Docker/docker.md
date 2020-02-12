@@ -202,17 +202,84 @@ By default no ports is exposed to the outside world by Docker. Internally contai
   - `docker volume prune`
 
 ## Dockerfile
-- Every command creates a new layer and while updating image only the modified layer needs to be pulled/pushed thereby reducing transfer size. 
+It is used for building images. Every command creates a new layer and while updating image. While rebuilding the image only the ones after the modified layers needs to be rebuilt. Similarly only the layers not already available on your system is downloaded thus reducing data transfer. 
 
 ## Dockerfile commands
+
+- `FROM <IMAGE-NAME>:<TAG>`
+  - Example: `FROM ubuntu:18.04`
+
+- `MAINTAINER <NAME>`
+  - Example: `MAINTAINER Rishav Anand`
+
+- `RUN <COMMAND>`
+  - Example: `RUN apt update`
+  - Runs a command in a new layer on top of the current image
+
+- `CMD ["EXECUTABLE", "PARAM1", "PARAM2"]`
+  - Example: `CMD ["echo", "Hello, World!"]`
+  - CMD instruction allows you to set a default command, which will be executed only when you run container without specifying a command.
+  - CMD gets overridden by command line arguments.
+
+- `LABEL <KEY>=<VALUE>`
+  - Example: `LABEL version=0.0.1`
+  - Adds one or many metadata to the image for better organization.
+
+- `EXPOSE <PORT>`
+  - Example: `EXPOSE 5000`
+  - Tells Docker that the container listens at some specific port but does not expose them to the external world.
+  - Basically used for internal container to container communications.
+
+- `ENV <KEY>=<VALUE>`
+  - Example: `ENV name=rishav`
+  - Sets an environment variable that is available inside the container
+
+- `ADD <FILE|DIRECTORY|REMOTE-URL>`
+  - Example: `ADD rootfs.tar.gz /`
+  - Example: `ADD https://cachefly.cachefly.net/100mb.test /100mb.test`
+  - Copy files, directories, or remote file URLs from into the filesystem of the container.
+
+- `COPY <FILENAME|DIRECTORY-NAME>`
+  - Example: `COPY user-data /`
+  - Copy new files, directories from into the filesystem of the container.
+
+- `ENTRYPOINT ["EXECUTABLE", "PARAM1", "PARAM2"]`
+  - Example: `ENTRYPOINT ["/bin/bash", "echo", "hello"]`
+  - Allows you to configure a container that will run as an executable.
+  - They are not overridden by command line arguments.
+
+## Best practices for Dockerfile
+
+## Docker-compose
+
+## Docker-compose commands
 
 ## Tips and tricks
 
 ### Cleaning
 
-### Commit vs Dockerfile
+### Commit method vs Dockerfile method
 
 ### Changes after volume in dockerfile are not made
+
+### Cloning a repo during build
+
+```
+FROM alpine
+
+# Install ssh client and git
+RUN apk add --no-cache openssh-client git
+
+# Download public key for github.com
+RUN mkdir -p -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+# Clone private repository
+RUN --mount=type=ssh git clone git@github.com:myorg/myproject.git myproject
+```
+
+Build command: `docker build --ssh default .`
+
+- --ssh : SSH agent socket or keys to expose to the build.
 
 Read more:
 https://stackoverflow.com/questions/26110828/should-i-use-dockerfiles-or-image-commits
@@ -227,6 +294,18 @@ https://stackoverflow.com/questions/26110828/should-i-use-dockerfiles-or-image-c
 - https://www.guru99.com/docker-tutorial.html
 
 ### Hypervisor
+
+### RUN vs CMD vs ENTRYPOINT
+
+Read more: 
+- https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
+- https://stackoverflow.com/questions/21553353/what-is-the-difference-between-cmd-and-entrypoint-in-a-dockerfile
+
+### ARG vs ENV
+
+Read more: 
+- https://stackoverflow.com/questions/41916386/arg-or-env-which-one-to-use-in-this-case
+- https://vsupalov.com/docker-arg-env-variable-guide/
 
 ### CI/CD
 
