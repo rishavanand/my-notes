@@ -204,7 +204,7 @@ By default no ports is exposed to the outside world by Docker. Internally contai
 ## Dockerfile
 It is used for building images. Every command creates a new layer and while updating image. While rebuilding the image only the ones after the modified layers needs to be rebuilt. Similarly only the layers not already available on your system is downloaded thus reducing data transfer. 
 
-## Dockerfile commands
+### Dockerfile commands
 
 - `FROM <IMAGE-NAME>:<TAG>`
   - Example: `FROM ubuntu:18.04`
@@ -256,15 +256,23 @@ It is used for building images. Every command creates a new layer and while upda
   - Example: `WORKDIR /home/rishav`
   - Sets current working directory
 
-## Docker-compose
-
-## Docker-compose commands
-
 ## Best practices for Dockerfile
 
 ## Tips and tricks
 
 ### Cleaning
+
+- `docker image prune` - remove all dangling docker images
+- 
+- `docker image prone -a` - remove all images that do not have any containers associated to them
+
+- `docker container prune` - remove all stopped containers
+  
+- `docker volume prine` - remove all unused volumes
+
+- `docker network prune` - remove all unused networks
+
+- `docker system prune` - remove all all stopped containers, all networks not used by at least one container, all dangling images, all build cache
 
 ### Commit method vs Dockerfile method
 
@@ -320,3 +328,5 @@ Read more:
 ### Kubernetes
 
 ### Daemon
+
+### Docker licensing
