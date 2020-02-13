@@ -248,11 +248,19 @@ It is used for building images. Every command creates a new layer and while upda
   - Allows you to configure a container that will run as an executable.
   - They are not overridden by command line arguments.
 
-## Best practices for Dockerfile
+- `USER <USERNAME|UID>`
+  - Example: `USER rishav`
+  - Sets username or uid before further instruction execution
+
+- `WORKDIR <PATH>`
+  - Example: `WORKDIR /home/rishav`
+  - Sets current working directory
 
 ## Docker-compose
 
 ## Docker-compose commands
+
+## Best practices for Dockerfile
 
 ## Tips and tricks
 
