@@ -119,4 +119,19 @@ class Employee{
 }
 ```
 
+## Generics
+
+- Can be applied to functions, classes and interfaces
+- Instead of defining the type as any of a variable of a reusable function/class/interface, generic type can be assigned
+- The type gets defined by the type provided during the call
+
+```
+function fun<T>(args: T): T {
+  return args;
+}
+
+fun<string>('hello');
+fun<number>(1);
+```
+
 Explore more: https://www.youtube.com/watch?v=WBPrJSw7yQA
