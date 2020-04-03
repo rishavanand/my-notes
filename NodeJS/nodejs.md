@@ -15,6 +15,13 @@ This means the JS engine can now control the file systems, networks, etc by runn
 
 ## Where not to use NodeJS?
 
+## Best practices
+
+- [Bulletproof node.js project architecture](https://softwareontheroad.com/ideal-nodejs-project-structure/)
+- [Design Node.js Backend Architecture like a Pro](https://afteracademy.com/blog/design-node-js-backend-architecture-like-a-pro)
+- [Node Hero - Node.js Project Structure Tutorial](https://blog.risingstack.com/node-hero-node-js-project-structure-tutorial/)
+- [https://github.com/ryanmcdermott/clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+
 ## Resources:
 
 - https://www.youtube.com/playlist?list=PLqq-6Pq4lTTa-d0iZg41U2RDqECol9C5B
@@ -28,3 +35,4 @@ This means the JS engine can now control the file systems, networks, etc by runn
 - https://dev.to/khaosdoctor/node-js-under-the-hood-7-the-new-v8-4gd6
 - https://dev.to/khaosdoctor/node-js-under-the-hood-8-oh-the-bytecodes-1p6p
 - https://dev.to/khaosdoctor/node-js-under-the-hood-9-collecting-the-garbage-772
+- https://medium.com/@rossbulat/advanced-typescript-by-example-api-service-manager-7ea591f5eba8
