@@ -20,7 +20,8 @@ This means the JS engine can now control the file systems, networks, etc by runn
 - [Bulletproof node.js project architecture](https://softwareontheroad.com/ideal-nodejs-project-structure/)
 - [Design Node.js Backend Architecture like a Pro](https://afteracademy.com/blog/design-node-js-backend-architecture-like-a-pro)
 - [Node Hero - Node.js Project Structure Tutorial](https://blog.risingstack.com/node-hero-node-js-project-structure-tutorial/)
-- [https://github.com/ryanmcdermott/clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+- [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+- [Structuring][https://laravel.io/forum/06-17-2014-controller-service-repository-architecture]
 
 ## Resources:
 
