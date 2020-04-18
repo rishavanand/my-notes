@@ -1,0 +1,12 @@
+version: "3.3"
+
+# Management credentials guest:guest
+services:
+  rabbitmq:
+    container_name: "rabbitmq"
+    build: .
+    image: "rabbitmq:3-management-delayed-alpine"
+    hostname: "rabbitmq"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
